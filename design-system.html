@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viva — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Jost:wght@300;400;500;600&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1B2E;
+  --creme: #F5F1E8;
+  --terra: #C45A3D;
+  --ocre: #D4A574;
+  --white: #FFFFFF;
+  --gray: rgba(11,27,46,0.6);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--creme);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* ==================== NAV ==================== */
+.nav {
+  position: sticky;
+  top: 0;
+  background: var(--creme);
+  border-bottom: 1px solid rgba(11,27,46,0.08);
+  padding: 16px 64px;
+  z-index: 100;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-brand {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.nav-links a {
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.nav-links a:hover { color: var(--terra); }
+
+/* ==================== HERO ==================== */
+.hero {
+  background: var(--navy);
+  padding: 128px 64px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--terra);
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.hero-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 56px;
+  color: var(--creme);
+  line-height: 1.2;
+  max-width: 700px;
+  margin: 0 auto 24px;
+}
+.hero-sub {
+  font-size: 16px;
+  color: rgba(245,241,232,0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ==================== SECTION ==================== */
+.section {
+  padding: 96px 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--terra);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-text {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+.divider {
+  border-top: 1px solid rgba(11,27,46,0.08);
+  margin: 64px 0;
+}
+
+/* ==================== COLOR SWATCHES ==================== */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.color-card {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(11,27,46,0.06);
+}
+.color-swatch {
+  height: 140px;
+  position: relative;
+}
+.color-info {
+  padding: 20px;
+  background: var(--white);
+}
+.color-name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.color-token {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+.color-hex {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--navy);
+}
+.color-usage {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 12px;
+  line-height: 1.5;
+  padding-top: 12px;
+  border-top: 1px solid rgba(11,27,46,0.06);
+}
+
+/* ==================== OPACITY SCALE ==================== */
+.opacity-scale {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.opacity-block {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px;
+}
+.opacity-label {
+  font-family: monospace;
+  font-size: 10px;
+  color: var(--white);
+}
+.opacity-block.light .opacity-label { color: var(--navy); }
+
+/* ==================== TYPOGRAPHY SAMPLES ==================== */
+.type-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(11,27,46,0.08);
+  align-items: center;
+}
+.type-meta {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+.type-meta strong {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 10px;
+  display: block;
+  margin-bottom: 8px;
+}
+.type-sample-display-xxl { font-family: 'Lora', serif; font-weight: 500; font-size: 64px; line-height: 1.1; }
+.type-sample-display-xl { font-family: 'Lora', serif; font-weight: 500; font-size: 48px; line-height: 1.2; }
+.type-sample-display-lg { font-family: 'Lora', serif; font-weight: 500; font-size: 36px; line-height: 1.3; }
+.type-sample-display-md { font-family: 'Lora', serif; font-weight: 400; font-size: 28px; line-height: 1.4; }
+.type-sample-display-sm { font-family: 'Lora', serif; font-weight: 400; font-size: 22px; line-height: 1.5; }
+.type-sample-body-lg { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.7; color: rgba(11,27,46,0.85); }
+.type-sample-body { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: rgba(11,27,46,0.85); }
+.type-sample-body-sm { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: rgba(11,27,46,0.75); }
+.type-sample-label { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--terra); }
+.type-sample-accent { font-family: 'Architects Daughter', cursive; font-weight: 400; font-size: 20px; color: var(--navy); }
+
+/* ==================== SPACING SCALE ==================== */
+.spacing-row {
+  display: grid;
+  grid-template-columns: 120px 80px 1fr;
+  gap: 24px;
+  padding: 12px 0;
+  align-items: center;
+  border-bottom: 1px solid rgba(11,27,46,0.06);
+}
+.spacing-token {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--navy);
+  font-weight: 500;
+}
+.spacing-value {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--gray);
+}
+.spacing-bar {
+  height: 32px;
+  background: var(--terra);
+  border-radius: 2px;
+}
+
+/* ==================== RADIUS SAMPLES ==================== */
+.radius-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+}
+.radius-card {
+  text-align: center;
+}
+.radius-sample {
+  background: var(--navy);
+  height: 100px;
+  margin-bottom: 12px;
+}
+.radius-token {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--navy);
+  font-weight: 500;
+}
+.radius-value {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--gray);
+}
+
+/* ==================== SHADOWS ==================== */
+.shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  padding: 32px 0;
+}
+.shadow-card {
+  text-align: center;
+}
+.shadow-sample {
+  background: var(--white);
+  height: 120px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.shadow-token {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.shadow-usage {
+  font-size: 11px;
+  color: var(--gray);
+}
+
+/* ==================== EXAMPLES ==================== */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+.example-card {
+  border: 1px solid rgba(11,27,46,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.example-content {
+  padding: 32px;
+  min-height: 200px;
+  background: var(--creme);
+}
+.example-label {
+  padding: 12px 20px;
+  background: var(--white);
+  border-top: 1px solid rgba(11,27,46,0.06);
+  font-size: 11px;
+  color: var(--gray);
+  font-family: monospace;
+}
+
+.example-card.example-button-card .example-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--creme);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 250ms;
+}
+.btn-primary:hover { background: rgba(11,27,46,0.85); }
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  padding: 14px 28px;
+  border: 1px solid var(--navy);
+  border-radius: 4px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 250ms;
+}
+.btn-secondary:hover { background: var(--navy); color: var(--creme); }
+.btn-text {
+  background: transparent;
+  color: var(--navy);
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid var(--navy);
+  border-radius: 0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.example-form .form-group {
+  margin-bottom: 20px;
+}
+.form-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(11,27,46,0.2);
+  border-radius: 4px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  background: var(--white);
+  color: var(--navy);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--navy);
+}
+
+.example-content-card {
+  padding: 32px;
+  background: var(--white);
+  border-radius: 6px;
+}
+.example-content-card .eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--terra);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.example-content-card .title {
+  font-family: 'Lora', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.example-content-card .text {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ==================== USAGE RULES ==================== */
+.rule-card {
+  background: var(--white);
+  border-left: 3px solid var(--terra);
+  padding: 24px 32px;
+  margin-bottom: 24px;
+  border-radius: 0 4px 4px 0;
+}
+.rule-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.rule-text {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: var(--navy);
+  color: var(--creme);
+  padding: 96px 64px;
+  text-align: center;
+}
+.footer-title {
+  font-family: 'Lora', serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.footer-text {
+  font-size: 14px;
+  color: rgba(245,241,232,0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 16px 24px; gap: 16px; }
+  .nav-links { display: none; }
+  .hero { padding: 80px 24px; }
+  .hero-title { font-size: 36px; }
+  .section { padding: 64px 24px; }
+  .section-title { font-size: 32px; }
+  .type-row { grid-template-columns: 1fr; gap: 16px; }
+  .type-sample-display-xxl { font-size: 40px; }
+  .type-sample-display-xl { font-size: 32px; }
+  .type-sample-display-lg { font-size: 28px; }
+  .spacing-row { grid-template-columns: 80px 60px 1fr; gap: 12px; }
+  .footer { padding: 64px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav class="nav">
+  <div class="nav-brand">viva — design system</div>
+  <div class="nav-links">
+    <a href="#cores">Cores</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#espacamento">Espaçamento</a>
+    <a href="#radius">Radius</a>
+    <a href="#shadows">Shadows</a>
+    <a href="#exemplos">Exemplos</a>
+    <a href="#regras">Regras</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-eyebrow">Design System v1.0</div>
+  <h1 class="hero-title">Os tokens que sustentam tudo que a Viva constrói.</h1>
+  <p class="hero-sub">Este documento traduz o brand guide em variáveis aplicáveis. Cada cor, tipografia, espaçamento e regra aqui tem razão estratégica — não decisão estética arbitrária.</p>
+</section>
+
+<!-- ==================== CORES ==================== -->
+<section class="section" id="cores">
+  <div class="section-label">01 · Cores</div>
+  <h2 class="section-title">Paleta base</h2>
+  <p class="section-text">Cinco cores. Navy é estrutural, creme é o fundo padrão, terracota e ocre são acentos parcimoniosos. Branco apenas em contextos digitais funcionais.</p>
+
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #0B1B2E;"></div>
+      <div class="color-info">
+        <div class="color-name">Navy</div>
+        <div class="color-token">--color-navy</div>
+        <div class="color-hex">#0B1B2E</div>
+        <div class="color-usage">Cor estrutural. Tipografia em fundos claros, fundos institucionais, profundidade.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #F5F1E8;"></div>
+      <div class="color-info">
+        <div class="color-name">Creme</div>
+        <div class="color-token">--color-creme</div>
+        <div class="color-hex">#F5F1E8</div>
+        <div class="color-usage">Fundo primário. Substitui o branco em quase todos os contextos de marca.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #C45A3D;"></div>
+      <div class="color-info">
+        <div class="color-name">Terracota</div>
+        <div class="color-token">--color-terracota</div>
+        <div class="color-hex">#C45A3D</div>
+        <div class="color-usage">Acento. Eyebrows, labels, detalhes editoriais. Nunca como protagonista.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #D4A574;"></div>
+      <div class="color-info">
+        <div class="color-name">Ocre</div>
+        <div class="color-token">--color-ocre</div>
+        <div class="color-hex">#D4A574</div>
+        <div class="color-usage">Acento secundário. Detalhes em ilustrações, contextos editoriais específicos.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FFFFFF; border: 1px solid rgba(11,27,46,0.1);"></div>
+      <div class="color-info">
+        <div class="color-name">Branco</div>
+        <div class="color-token">--color-branco</div>
+        <div class="color-hex">#FFFFFF</div>
+        <div class="color-usage">Apenas para contextos digitais funcionais — formulários, dashboards, OTAs.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label">01.2 · Escala de opacidade</div>
+  <h2 class="section-title">Hierarquia tipográfica sem cinzas</h2>
+  <p class="section-text">A Viva não usa cinzas neutros. Hierarquia se faz com navy em diferentes opacidades sobre fundos claros, ou creme em diferentes opacidades sobre navy. Mantém coerência cromática.</p>
+
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); margin-bottom: 12px;">Navy sobre creme</div>
+    <div class="opacity-scale">
+      <div class="opacity-block" style="background: rgba(11,27,46,1.0);"><span class="opacity-label">100%</span></div>
+      <div class="opacity-block" style="background: rgba(11,27,46,0.8);"><span class="opacity-label">80%</span></div>
+      <div class="opacity-block" style="background: rgba(11,27,46,0.6);"><span class="opacity-label">60%</span></div>
+      <div class="opacity-block" style="background: rgba(11,27,46,0.4);"><span class="opacity-label">40%</span></div>
+      <div class="opacity-block light" style="background: rgba(11,27,46,0.2);"><span class="opacity-label">20%</span></div>
+      <div class="opacity-block light" style="background: rgba(11,27,46,0.1);"><span class="opacity-label">10%</span></div>
+      <div class="opacity-block light" style="background: rgba(11,27,46,0.06);"><span class="opacity-label">6%</span></div>
+    </div>
+  </div>
+
+  <div style="background: var(--navy); padding: 32px; border-radius: 6px;">
+    <div style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(245,241,232,0.5); margin-bottom: 12px;">Creme sobre navy</div>
+    <div class="opacity-scale">
+      <div class="opacity-block light" style="background: rgba(245,241,232,1.0);"><span class="opacity-label">100%</span></div>
+      <div class="opacity-block light" style="background: rgba(245,241,232,0.7);"><span class="opacity-label">70%</span></div>
+      <div class="opacity-block" style="background: rgba(245,241,232,0.5);"><span class="opacity-label">50%</span></div>
+      <div class="opacity-block" style="background: rgba(245,241,232,0.3);"><span class="opacity-label">30%</span></div>
+      <div class="opacity-block" style="background: rgba(245,241,232,0.12);"><span class="opacity-label">12%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TIPOGRAFIA ==================== -->
+<section class="section" id="tipografia">
+  <div class="section-label">02 · Tipografia</div>
+  <h2 class="section-title">Três famílias com papéis claros</h2>
+  <p class="section-text">Lora carrega o peso editorial. Jost faz o trabalho funcional. Architects Daughter aparece apenas como camada manuscrita, em uso seletivo. Bold (700+) não existe na Viva — hierarquia se faz por tamanho e peso médio, nunca por bold.</p>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Display 5XL</strong>
+      Lora · 500 · 64px<br>line-height 1.1
+    </div>
+    <div class="type-sample-display-xxl">Viva a sua estadia.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Display 4XL</strong>
+      Lora · 500 · 48px<br>line-height 1.2
+    </div>
+    <div class="type-sample-display-xl">Operação premium em escala.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Display 3XL</strong>
+      Lora · 500 · 36px<br>line-height 1.3
+    </div>
+    <div class="type-sample-display-lg">Cuidado que se prova.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Display 2XL</strong>
+      Lora · 400 · 28px<br>line-height 1.4
+    </div>
+    <div class="type-sample-display-md">A operação que não se anuncia, se percebe.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Display XL</strong>
+      Lora · 400 · 22px<br>line-height 1.5
+    </div>
+    <div class="type-sample-display-sm">O hóspede do studio recebe o mesmo cuidado.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Body LG</strong>
+      Jost · 400 · 18px<br>line-height 1.7
+    </div>
+    <div class="type-sample-body-lg">A Viva opera apartamentos para estadias flexíveis em São Paulo, Rio e Florianópolis. Mil e quatrocentas unidades, um padrão único de operação.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Body</strong>
+      Jost · 400 · 16px<br>line-height 1.7
+    </div>
+    <div class="type-sample-body">Para o proprietário institucional, isso significa previsibilidade. Para o hóspede, significa cuidado. Para a equipe, significa um sistema que funciona — onde a operação faz a curadoria pelo design e a tecnologia faz a curadoria pela ausência.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Body SM</strong>
+      Jost · 400 · 14px<br>line-height 1.6
+    </div>
+    <div class="type-sample-body-sm">Texto secundário em interfaces, captions de imagens, metadados. Usado quando o corpo principal precisa de complemento ou contexto adicional.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Label / Eyebrow</strong>
+      Jost · 600 · 10px<br>tracking 0.25em
+    </div>
+    <div class="type-sample-label">Identidade Visual · 01</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Accent</strong>
+      Architects Daughter<br>20px · uso seletivo
+    </div>
+    <div class="type-sample-accent">— anotação editorial, uso parcimonioso</div>
+  </div>
+</section>
+
+<!-- ==================== ESPAÇAMENTO ==================== -->
+<section class="section" id="espacamento">
+  <div class="section-label">03 · Espaçamento</div>
+  <h2 class="section-title">Sistema de 4px</h2>
+  <p class="section-text">Todo espaço — padding, margin, gap — é múltiplo de 4. Cria ritmo visual consistente em qualquer aplicação. Quando em dúvida entre dois valores, escolha o maior. Espaço em branco é luxo estratégico.</p>
+
+  <div style="background: var(--white); padding: 32px; border-radius: 6px; border: 1px solid rgba(11,27,46,0.06);">
+    <div class="spacing-row">
+      <div class="spacing-token">space.1</div>
+      <div class="spacing-value">4px</div>
+      <div class="spacing-bar" style="width: 4px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.2</div>
+      <div class="spacing-value">8px</div>
+      <div class="spacing-bar" style="width: 8px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.3</div>
+      <div class="spacing-value">12px</div>
+      <div class="spacing-bar" style="width: 12px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.4</div>
+      <div class="spacing-value">16px</div>
+      <div class="spacing-bar" style="width: 16px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.6</div>
+      <div class="spacing-value">24px</div>
+      <div class="spacing-bar" style="width: 24px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.8</div>
+      <div class="spacing-value">32px</div>
+      <div class="spacing-bar" style="width: 32px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.12</div>
+      <div class="spacing-value">48px</div>
+      <div class="spacing-bar" style="width: 48px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.16</div>
+      <div class="spacing-value">64px</div>
+      <div class="spacing-bar" style="width: 64px;"></div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-token">space.24</div>
+      <div class="spacing-value">96px</div>
+      <div class="spacing-bar" style="width: 96px;"></div>
+    </div>
+    <div class="spacing-row" style="border: none;">
+      <div class="spacing-token">space.32</div>
+      <div class="spacing-value">128px</div>
+      <div class="spacing-bar" style="width: 128px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== RADIUS ==================== -->
+<section class="section" id="radius">
+  <div class="section-label">04 · Border Radius</div>
+  <h2 class="section-title">Cantos sóbrios</h2>
+  <p class="section-text">A Viva não é boutique fofa. Radius pequenos a médios — 2px a 12px em retângulos. Nada de cantos arredondados exagerados que comuniquem "amigável" demais. Circular apenas para avatares e badges.</p>
+
+  <div class="radius-grid">
+    <div class="radius-card">
+      <div class="radius-sample" style="border-radius: 0;"></div>
+      <div class="radius-token">radius.none</div>
+      <div class="radius-value">0</div>
+    </div>
+    <div class="radius-card">
+      <div class="radius-sample" style="border-radius: 2px;"></div>
+      <div class="radius-token">radius.sm</div>
+      <div class="radius-value">2px</div>
+    </div>
+    <div class="radius-card">
+      <div class="radius-sample" style="border-radius: 4px;"></div>
+      <div class="radius-token">radius.base</div>
+      <div class="radius-value">4px</div>
+    </div>
+    <div class="radius-card">
+      <div class="radius-sample" style="border-radius: 6px;"></div>
+      <div class="radius-token">radius.md</div>
+      <div class="radius-value">6px</div>
+    </div>
+    <div class="radius-card">
+      <div class="radius-sample" style="border-radius: 12px;"></div>
+      <div class="radius-token">radius.lg</div>
+      <div class="radius-value">12px</div>
+    </div>
+    <div class="radius-card">
+      <div class="radius-sample" style="border-radius: 9999px;"></div>
+      <div class="radius-token">radius.full</div>
+      <div class="radius-value">circular</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SHADOWS ==================== -->
+<section class="section" id="shadows">
+  <div class="section-label">05 · Shadows</div>
+  <h2 class="section-title">Elevação com discrição</h2>
+  <p class="section-text">Sombras adicionam ruído visual. A Viva prefere bordas sutis (border de navy com 6% de opacidade) a sombras dramáticas. Quando usar sombra, usar a menor que resolve. Reserva da escala maior para elevações reais — modais, dropdowns, drag-and-drop.</p>
+
+  <div class="shadow-grid">
+    <div class="shadow-card">
+      <div class="shadow-sample" style="border: 1px solid rgba(11,27,46,0.06);"></div>
+      <div class="shadow-token">shadow.none</div>
+      <div class="shadow-usage">Padrão. Prefira borda.</div>
+    </div>
+    <div class="shadow-card">
+      <div class="shadow-sample" style="box-shadow: 0 1px 2px rgba(11,27,46,0.04);"></div>
+      <div class="shadow-token">shadow.sm</div>
+      <div class="shadow-usage">Cards em listagem</div>
+    </div>
+    <div class="shadow-card">
+      <div class="shadow-sample" style="box-shadow: 0 2px 8px rgba(11,27,46,0.06);"></div>
+      <div class="shadow-token">shadow.base</div>
+      <div class="shadow-usage">Hover em cards</div>
+    </div>
+    <div class="shadow-card">
+      <div class="shadow-sample" style="box-shadow: 0 8px 24px rgba(11,27,46,0.08);"></div>
+      <div class="shadow-token">shadow.md</div>
+      <div class="shadow-usage">Modais, dropdowns</div>
+    </div>
+    <div class="shadow-card">
+      <div class="shadow-sample" style="box-shadow: 0 16px 48px rgba(11,27,46,0.12);"></div>
+      <div class="shadow-token">shadow.lg</div>
+      <div class="shadow-usage">Overlays principais</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EXEMPLOS ==================== -->
+<section class="section" id="exemplos">
+  <div class="section-label">06 · Componentes em uso</div>
+  <h2 class="section-title">Como os tokens viram interface</h2>
+  <p class="section-text">Exemplos de componentes básicos aplicando os tokens. Estes não são componentes finais — são demonstrações do sistema funcionando.</p>
+
+  <div class="examples-grid">
+    <div class="example-card example-button-card">
+      <div class="example-content">
+        <button class="btn-primary">Reservar estadia</button>
+        <button class="btn-secondary">Saber mais</button>
+        <button class="btn-text">Ver detalhes →</button>
+      </div>
+      <div class="example-label">Botões: primary, secondary, text</div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-content example-form">
+        <div class="form-group">
+          <label class="form-label">Nome</label>
+          <input class="form-input" type="text" placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input class="form-input" type="email" placeholder="seu@email.com">
+        </div>
+      </div>
+      <div class="example-label">Form fields com labels em small caps</div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-content" style="display: flex; align-items: center;">
+        <div class="example-content-card" style="width: 100%;">
+          <div class="eyebrow">São Paulo · Jardins</div>
+          <div class="title">Studio com vista para a Paulista</div>
+          <div class="text">Apartamento de 35m² no coração dos Jardins, mobiliado e equipado para estadias de 30+ dias.</div>
+        </div>
+      </div>
+      <div class="example-label">Card de conteúdo com hierarquia tipográfica</div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-content" style="background: var(--navy); display: flex; align-items: center;">
+        <div style="width: 100%;">
+          <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--terra); font-weight: 600; margin-bottom: 12px;">Identidade Visual</div>
+          <div style="font-family: 'Lora', serif; font-size: 24px; color: var(--creme); line-height: 1.3; margin-bottom: 12px; font-weight: 500;">A operação que não se anuncia.</div>
+          <div style="font-size: 13px; color: rgba(245,241,232,0.6); line-height: 1.7;">Cuidado que se prova. Consistência que se sente.</div>
+        </div>
+      </div>
+      <div class="example-label">Bloco hero sobre navy</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REGRAS ==================== -->
+<section class="section" id="regras">
+  <div class="section-label">07 · Regras invariantes</div>
+  <h2 class="section-title">Princípios que não se negociam</h2>
+  <p class="section-text">Os tokens dão a granularidade. Estas regras dão o juízo. Quando duas opções parecem possíveis, são elas que decidem.</p>
+
+  <div class="rule-card">
+    <div class="rule-title">Espaço em branco é luxo estratégico</div>
+    <div class="rule-text">Entre duas opções, escolher a com mais respiro. A Viva não é uma marca apertada — cada elemento precisa do espaço que cabe. Se uma peça parece "muito vazia", está no ponto certo.</div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-title">Navy é estrutura, terracota é acento</div>
+    <div class="rule-text">Navy sustenta a marca: tipografia, fundos institucionais, ícones funcionais. Terracota aparece em ~5% da composição: eyebrows, labels, detalhes editoriais. Inverter essa proporção descaracteriza a Viva.</div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-title">Hierarquia por tamanho, não por bold</div>
+    <div class="rule-text">Bold (700+) não existe na Viva. Diferenças tipográficas se fazem por tamanho, peso médio (500) e tracking. Bold introduz peso visual que destoa da contenção editorial da marca.</div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-title">Caixa baixa por padrão</div>
+    <div class="rule-text">Títulos, frases-âncora, navegação — tudo em caixa baixa. Caixa alta apenas em eyebrows e labels muito pequenos (10-12px), com tracking generoso. A caixa baixa é o equivalente visual da operação que não grita.</div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-title">Imagens preservam a realidade</div>
+    <div class="rule-text">Sem filtros saturados, sem cores que não estão na cena. Em watercolors arquitetônicos, preservar as cores originais do prédio — nunca impor a paleta Viva sobre arquitetura existente. A Viva não inventa realidade, opera a existente.</div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-title">Vida sem gente</div>
+    <div class="rule-text">Fotografias mostram ambientes acabados de arrumar, sem figurantes vivendo neles. A presença humana aparece pelo cuidado operacional visível — toalha dobrada, cama feita, água na mesa de cabeceira. Pessoas apenas quando o cuidado humano é o ponto principal da peça.</div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-title">Se inventar um valor, parar e perguntar</div>
+    <div class="rule-text">Uma cor nova, um tamanho fora da escala, um espaçamento custom — quase sempre existe um token que serve. Se realmente não existe, é exceção que deve ser discutida com quem mantém o sistema, não decisão individual.</div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-title">Design System v1.0</div>
+  <div class="footer-text">Este documento é vivo. Tokens, regras e exemplos evoluem com o uso. Mudanças devem ser propostas, discutidas e propagadas para o brand guide e arquivos técnicos antes de virarem padrão.</div>
+</footer>
+
+</body>
+</html>
