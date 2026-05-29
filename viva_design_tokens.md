@@ -79,7 +79,7 @@ Para feedbacks de sistema. Não usar em peças de marca.
 
 | Token | Família | Uso |
 |---|---|---|
-| `font.display` | `'Lora', serif` | Títulos, frases-âncora, citações editoriais |
+| `font.display` | `'Fraunces', serif` | Títulos, frases-âncora, citações editoriais |
 | `font.accent` | `'Architects Daughter', cursive` | Camada manuscrita, anotações editoriais, never body |
 | `font.body` | `'Jost', sans-serif` | Corpo de texto, UI, labels, dados |
 
@@ -105,8 +105,8 @@ Sistema modular. Cada nível tem propósito específico — não inventar tamanh
 | Token | Valor | Uso |
 |---|---|---|
 | `font.weight.light` | `300` | Jost apenas, em corpo amplo |
-| `font.weight.regular` | `400` | Padrão para Lora e Jost |
-| `font.weight.medium` | `500` | Lora em títulos de destaque |
+| `font.weight.regular` | `400` | Padrão para Fraunces e Jost |
+| `font.weight.medium` | `500` | Fraunces em títulos de destaque |
 | `font.weight.semibold` | `600` | Jost em labels, eyebrows |
 
 **Regra:** Nunca usar bold (700+). Hierarquia se faz por tamanho, peso médio (500) e tracking, nunca por bold.
@@ -115,7 +115,7 @@ Sistema modular. Cada nível tem propósito específico — não inventar tamanh
 
 | Token | Valor | Uso |
 |---|---|---|
-| `tracking.tight` | `-0.02em` | Apenas em títulos muito grandes (4xl+) em Lora |
+| `tracking.tight` | `-0.02em` | Apenas em títulos muito grandes (4xl+) em Fraunces |
 | `tracking.normal` | `0` | Corpo de texto |
 | `tracking.wide` | `0.05em` | Botões, labels |
 | `tracking.wider` | `0.15em` | Eyebrows, small caps |
@@ -123,7 +123,7 @@ Sistema modular. Cada nível tem propósito específico — não inventar tamanh
 
 ### 2.5 Hierarquia tipográfica (regra de uso)
 
-**Display (Lora):** títulos de seção, frases-âncora, citações editoriais. Sempre em peso 400 ou 500. Nunca em caixa alta.
+**Display (Fraunces):** títulos de seção, frases-âncora, citações editoriais. Sempre em peso 400 ou 500. Nunca em caixa alta.
 
 **Body (Jost):** todo o resto. Corpo, UI, labels, dados, navegação. Versátil.
 
