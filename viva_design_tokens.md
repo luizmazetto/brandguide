@@ -13,7 +13,7 @@ Documento mestre dos tokens de design da Viva. Codifica as decisões atômicas d
 | Token | Hex | Uso |
 |---|---|---|
 | `color.navy` | `#0B1B2E` | Cor estrutural primária. Tipografia em fundos claros, fundos institucionais, profundidade |
-| `color.creme` | `#F5F1E8` | Fundo primário. Substitui o branco em quase todos os contextos de marca |
+| `color.creme` | `#F4F3F0` | Fundo primário. Substitui o branco em quase todos os contextos de marca |
 | `color.terracota` | `#C45A3D` | Acento de cor. Usado com extrema parcimônia |
 | `color.ocre` | `#D4A574` | Acento secundário. Detalhes editoriais, ilustrações |
 | `color.branco` | `#FFFFFF` | Apenas para contextos digitais funcionais (OTAs, sistemas) |
@@ -69,7 +69,7 @@ Para feedbacks de sistema. Não usar em peças de marca.
 
 **Ocre é o quarto plano.** Detalhes em ilustrações, gravuras, contextos editoriais. Aparece menos que terracota.
 
-**Proporção recomendada em qualquer composição:** ~70% creme + ~25% navy + ~5% acentos (terracota + ocre).
+**Proporção entre creme e navy varia pelo canal.** Peças de hóspede e hospitalidade (welcome book, site, OTA) pendem mais pro creme — respiro e leveza. Peças institucionais e de autoridade (deck, proposta, relatório, capa, header/footer) pendem mais pro navy — peso e substância. Terracota fica em ~5% como acento em ambos os casos.
 
 ---
 
@@ -79,7 +79,7 @@ Para feedbacks de sistema. Não usar em peças de marca.
 
 | Token | Família | Uso |
 |---|---|---|
-| `font.display` | `'Fraunces', serif` | Títulos, frases-âncora, citações editoriais |
+| `font.display` | `'Newsreader', serif` | Títulos, frases-âncora, citações editoriais |
 | `font.accent` | `'Architects Daughter', cursive` | Camada manuscrita, anotações editoriais, never body |
 | `font.body` | `'Jost', sans-serif` | Corpo de texto, UI, labels, dados |
 
@@ -105,8 +105,8 @@ Sistema modular. Cada nível tem propósito específico — não inventar tamanh
 | Token | Valor | Uso |
 |---|---|---|
 | `font.weight.light` | `300` | Jost apenas, em corpo amplo |
-| `font.weight.regular` | `400` | Padrão para Fraunces e Jost |
-| `font.weight.medium` | `500` | Fraunces em títulos de destaque |
+| `font.weight.regular` | `400` | Padrão para Newsreader e Jost |
+| `font.weight.medium` | `500` | Jost padrão. Newsreader apenas em números de impacto e eyebrows display |
 | `font.weight.semibold` | `600` | Jost em labels, eyebrows |
 
 **Regra:** Nunca usar bold (700+). Hierarquia se faz por tamanho, peso médio (500) e tracking, nunca por bold.
@@ -115,7 +115,7 @@ Sistema modular. Cada nível tem propósito específico — não inventar tamanh
 
 | Token | Valor | Uso |
 |---|---|---|
-| `tracking.tight` | `-0.02em` | Apenas em títulos muito grandes (4xl+) em Fraunces |
+| `tracking.tight` | `-0.02em` | Apenas em títulos muito grandes (4xl+) em Newsreader |
 | `tracking.normal` | `0` | Corpo de texto |
 | `tracking.wide` | `0.05em` | Botões, labels |
 | `tracking.wider` | `0.15em` | Eyebrows, small caps |
@@ -123,11 +123,11 @@ Sistema modular. Cada nível tem propósito específico — não inventar tamanh
 
 ### 2.5 Hierarquia tipográfica (regra de uso)
 
-**Display (Fraunces):** títulos de seção, frases-âncora, citações editoriais. Sempre em peso 400 ou 500. Nunca em caixa alta.
+**Display (Newsreader):** títulos de seção, frases-âncora, citações editoriais. **Peso padrão 400; 500 permitido apenas em números de impacto (24 mil · 4.71) e eyebrows display.** Newsreader é uma serif contemporânea desenhada pela Production Type para leitura em tela — terminações sutis ecoam o gesto de tinta do "a" do wordmark sem competir com ele. Editorial sério sem virar revista, contemporânea sem ser performática. Nunca em caixa alta. Nunca peso 600+.
 
 **Body (Jost):** todo o resto. Corpo, UI, labels, dados, navegação. Versátil.
 
-**Accent (Architects Daughter):** uso extremamente seletivo. Apenas para anotações editoriais que reforçam a camada humana — uma frase manuscrita ao lado de uma estatística, uma nota de rodapé sobre uma foto. Nunca como corpo, nunca em UI. Se em dúvida, não usa.
+**Accent (Architects Daughter):** uso restrito a materiais voltados a hóspede e cultura interna. Anotações editoriais que reforçam a camada humana — uma frase manuscrita ao lado de uma estatística, uma nota de rodapé sobre uma foto. **Nunca em materiais investor-facing ou owner-facing** — a fonte introduz tom artesanal que conflita com a leitura institucional. Nunca como corpo, nunca em UI. Se em dúvida, não usa.
 
 ---
 

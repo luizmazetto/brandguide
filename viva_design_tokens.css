@@ -9,7 +9,7 @@
      CORES — PALETA BASE
      ============================================================ */
   --color-navy: #0B1B2E;
-  --color-creme: #F5F1E8;
+  --color-creme: #F4F3F0;
   --color-terracota: #C45A3D;
   --color-ocre: #D4A574;
   --color-branco: #FFFFFF;
@@ -28,11 +28,11 @@
   /* ============================================================
      CORES — ESCALA DE OPACIDADE CREME (sobre fundo navy)
      ============================================================ */
-  --color-creme-100: rgba(245, 241, 232, 1.0);
-  --color-creme-70:  rgba(245, 241, 232, 0.7);
-  --color-creme-50:  rgba(245, 241, 232, 0.5);
-  --color-creme-30:  rgba(245, 241, 232, 0.3);
-  --color-creme-12:  rgba(245, 241, 232, 0.12);
+  --color-creme-100: rgba(244, 243, 240, 1.0);
+  --color-creme-70:  rgba(244, 243, 240, 0.7);
+  --color-creme-50:  rgba(244, 243, 240, 0.5);
+  --color-creme-30:  rgba(244, 243, 240, 0.3);
+  --color-creme-12:  rgba(244, 243, 240, 0.12);
 
   /* ============================================================
      CORES — SEMÂNTICAS (apenas produto digital)
@@ -45,7 +45,7 @@
   /* ============================================================
      TIPOGRAFIA — FAMÍLIAS
      ============================================================ */
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-display: 'Newsreader', Georgia, serif;
   --font-accent:  'Architects Daughter', cursive;
   --font-body:    'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
 
